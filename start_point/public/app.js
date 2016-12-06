@@ -5,37 +5,31 @@ var boba = {name: "Boba", favouriteFood: "Sock fluff", imageSrc:"http://66.media
  var bagheera = {name: "Bagheera", favouriteFood: "Tuna", imageSrc: "http://i2.mirror.co.uk/incoming/article6745691.ece/ALTERNATES/s615b/Black-cat.jpg"}
  cats.push(boba, barnaby, max, bagheera);
 
-var createUl = function(name) {
-  var ul = document.createElement("ul")
-  ul.classList.add( name )
+var createUl = function() {
+  var ul = document.createElement('ul')
+  ul.classList.add('cat')
   return ul;
 }
 
 var createLi = function(text) {
-  var li = document.createElement("li")
-  li.classList.add(text)
+  var li = document.createElement('li')
+  li.innerText = text;
   return li;
 }
 
 var createImg = function(src) {
-  var img = doument.createElement('img');
-  var width = 500;
-  var src = src;
+  var img = document.createElement('img');
+  img.width = 500;
+  img.src = src;
   return img;
 }
 
 var addCat = function(name, favouriteFood, image){
   var ul = createUl();
   var nameLi = createLi(name);
-  var favouriteFoodLi = createLi(text);
+  var favouriteFoodLi = createLi(favouriteFood);
   var imgSrc = createImg(image);
   appendElements(ul, nameLi, favouriteFoodLi, imgSrc);
-}
-
-var createCatArticle = function(){
-  var catArticle = document.createElement('article');
-  catArticle.classList.add('cat')
-  return catArticle;
 }
 
 var appendElements = function(ul, liName, liFood, img) {
